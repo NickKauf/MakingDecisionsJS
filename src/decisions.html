@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Making Decisions</title>
+</head>
+<body>
+Enter Wind Speed (mph): <input type="text" id="windSpeed">
+<button onclick="getCategoryFromSpeed()">Check</button>
+<br>
+<h2 id="categoryText">The Storm is Category (?)</h2>
+<script>
+    function getCategoryFromSpeed(){
+        var windSpeed = document.getElementById("windSpeed").value;
+        var output = document.getElementById("categoryText");
+        if (windSpeed < 74){
+            output.innerHTML = "This is not a hurricane force wind."
+        }
+        else if (windSpeed < 96) {
+            output.style.color = "blue"
+            output.innerHTML = "This is a category 1 hurricane"
+        }
+        else if (windSpeed < 111) {
+            output.style.color = "yellow"
+            output.innerHTML = "This is a category 2 hurricane"
+        }
+        else if (windSpeed < 131) {
+            output.style.color = "orange"
+            output.innerHTML = "This is a category 3 hurricane"
+        }
+        else if (windSpeed < 155) {
+            output.style.color = "purple"
+            output.innerHTML = "This is a category 4 hurricane"
+        }
+        else if (windSpeed >= 155) {
+            output.style.color = "red"
+            output.innerHTML = "This is a category 5 hurricane"
+        }
+        else {
+            output.innerHTML = "error: not a number"
+        }
+    }
+</script>
+</body>
+</html>
